@@ -13,9 +13,9 @@ import PlaceDetails from "../PlaceDetails/PlaceDetails.jsx";
 
 import useStyles from "./ListStyle";
 
-import data from "../Data";
+// import data from "../Data";
 
-const List = () => {
+const List = ({ places }) => {
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
@@ -43,7 +43,7 @@ const List = () => {
         </Select>
       </FormControl>
       <Grid container spacing={3} className={classes.list}>
-        {data?.map((place, i) => (
+        {places?.map((place, i) => (
           <Grid item key={i} xs={12}>
             <PlaceDetails place={place} />
           </Grid>
